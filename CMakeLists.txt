@@ -23,7 +23,6 @@ set(SRC_LIST
     src/EventHandler.cpp
     src/TgException.cpp
     src/TgTypeParser.cpp
-    src/net/BoostHttpOnlySslClient.cpp
     src/net/CurlHttpClient.cpp
     src/net/HttpParser.cpp
     src/net/TgLongPoll.cpp
@@ -39,10 +38,6 @@ find_package(Threads REQUIRED)
 
 ## zlib
 find_package(ZLIB REQUIRED)
-
-## openssl
-find_package(OpenSSL REQUIRED)
-include_directories(${OPENSSL_INCLUDE_DIR})
 
 ## curl
 find_package(CURL 7.56.0)
@@ -67,7 +62,6 @@ endif()
 set(LIB_LIST
     ${CMAKE_THREAD_LIBS_INIT}
     ${ZLIB_LIBRARIES}
-    ${OPENSSL_LIBRARIES}
     ${Boost_LIBRARIES}
     ${CURL_LIBRARIES}
 )
